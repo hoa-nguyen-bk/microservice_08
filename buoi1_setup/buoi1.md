@@ -3,6 +3,10 @@
   - quản lý bãi đỗ xe
   - quản lý lịch hẹn bác sĩ
 
+
+https://youtu.be/ljm-Xy3oYlQ
+
+
 ### các techstack mà senior bắt buộc biết khi làm
 
 OAuth2: mặc định hoặc tự xây
