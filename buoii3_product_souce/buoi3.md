@@ -19,3 +19,5 @@
 
 ![alt text](image-5.png)
 
+- về nhà tìm hỉu cách cài extension cọpilot, vì nos tốn tânj 5 phút
+- BTVN: làm cách nào đó tái sử dụng entity cho các project khác nhau
