@@ -15,6 +15,8 @@
 
 ![alt text](image-4.png)
 
+![alt text](image-6.png)
+
 - chỉ có con server 1 gọi đêns con server 2 thôi
 
 ![alt text](image-5.png)
@@ -43,3 +45,7 @@ theo hướng hỗ trợ thôi xong bắt buộc phải kiểm tra lại, xem th
 - mô hình onion design pattern: top đầu trong mô hình design pattern, còn statèies là top 2 thui, còn top đầu là cái onion này
 - flyaway: khi nào code firrst thì xài flyaway, tự động map từ database sang cái entity trong code, nhưng mà mình sẽ cố gắng tujw viêts trước cho nó quen
 - có phải tạo folder mapper để chứa mấy hàm map ko thầy: có thư viện mapstruct để can thiệt mí cái dto, setup hơi mệt, sau này 
+
+- chatgpt của a bình
+
+https://chatgpt.com/share/683bc5b3-1bc4-800c-8775-87710d22d5ab
