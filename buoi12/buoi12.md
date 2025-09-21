@@ -24,4 +24,4 @@
 
 ###  BTVN:
 - làm lại redis, phải làm thực tế zô
-- làm lại cái vụ call http client nhen
+- làm lại cái vụ call http client nhen  
