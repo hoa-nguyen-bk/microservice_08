@@ -21,5 +21,8 @@ xong tesst coi nó ra true hay false, true thì oki, false thì sai, ko sinh ra
 - xong nhớ kiểm tra cái biến varify = false hay true, cái này quan trọng lắm
 - xong demo liên quan đến signature, tính toàn vẹn về data, chỉ đảm bảo toàn vẹn khi data cho third party sử dụng, mình là người tự định nghĩa 
 - ví dụ cái thirdparty đụnh nghãi ra, tính hết rule nhen, cái third party gọi qua controller 
-- bữa sau:
+
+# bữa sau:
 - qua chuẩn mã hoá hybrid, chuẩn mã hoá deepweb nó là chuẩn mã hoá hybrid, hoặc PCP tuỳ mình
+- ôn lại cái logic nha
+- 
