@@ -1,0 +1,67 @@
+services:
+  elasticsearch:
+    image: elasticsearch:8.6.0
+    container_name: elasticsearch
+    restart: always
+    environment:
+      discovery.type: single-node # mún đổi multi được, node này là con server, nó là dr và dc
+      xpack.security.enabled: true # vì triển khai private zone, nên cũng ko cần
+      ELASTIC_PASSWORD: Aa@123456
+    ports:
+      - "9200:9200"
+    networks:
+      - cooperate
+
+  kibana:
+    image: kibana:8.6.0
+    container_name: kibana
+    restart: always
+    depends_on:
+      - elasticsearch
+    environment:
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200 # vì cùng network chung docker, chung đường mạng, cổng cũng là private port
+      ELASTICSEARCH_USERNAME: kibana_system
+      ELASTICSEARCH_PASSWORD: Aa@123456
+    ports:
+      - "5601:5601"
+    networks:
+      - cooperate
+
+  logstash:
+    image: logstash:8.6.0
+    container_name: logstash
+    restart: always
+    depends_on:
+      - elasticsearch
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    ports:
+      - "5044:5044"
+      - "5001:5001"
+      - "9600:9600"
+    networks:
+      - cooperate
+
+
+  rabbitmq:
+    image: rabbitmq:4.1.5-management-alpine
+    container_name: rabbitmq
+    ports:
+      - "5672:5672" # Standard AMQP port
+      - "15672:15672" # Management UI port
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq/ # Persistent data volume
+      - rabbitmq_logs:/var/log/rabbitmq/ # Persistent logs volume
+    networks:
+      - cooperate
+
+volumes:
+  rabbitmq_data:
+  rabbitmq_logs:
+
+networks:
+  cooperate:
+    driver: bridge
