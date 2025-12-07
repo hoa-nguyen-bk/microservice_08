@@ -131,3 +131,40 @@ https://piotrminkowski.wordpress.com/2017/02/03/how-to-ship-logs-with-logstash-e
 - là thành công 1 bước
 - http://localhost:15672/#/queues
 - xong nó lên được >10 cái là xong
+
+
+```conf
+rabbitmq {
+    host => "192.168.99.100"
+    port => 30000
+    user => "user"
+    password => "password"
+    queue => "bookshop_log"
+    durable => true
+    ack => true
+    prefetch_count => 50
+    codec => "json"
+  }
+
+```
+
+
+http://localhost:5601/app/management/data/index_management/indices
+
+![alt text](image-4.png)
+
+http://localhost:5601/app/discover#/
+
+- xong tạo dataview, 
+- anh bình bảo có khả năng làm cho nó hiển thị add filter, thống kê bao nhiêu lỗi index, thống kê cả loại request id luôn
+- central log có 2 thằng elk, sentry
+- người có thẩ quyền tạo rabbitmq
+
+## btvn:
+- về tự dựng lại
+
+## bữa sau:
+- làm dự án mới
+- keycloak làm gateway thế cho sigle authen và quản lý phân quyền cho tất cả servicer
+- (tuỳ) hệ thống setup thêm
+- 
